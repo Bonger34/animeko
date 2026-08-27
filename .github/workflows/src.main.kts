@@ -1628,7 +1628,7 @@ class WithMatrix(
         if (matrix.uploadApk) {
             runGradle(
                 name = "Build Android Release APKs",
-                `if` = expr { github.isAnimekoRepository and !github.isPullRequest },
+                `if` = expr { !github.isPullRequest },
                 tasks = arrayOf("assembleDefaultRelease"),
                 env = mapOf(
                     "signing_release_storeFileFromRoot" to expr { prepareSigningKey.outputs["filePath"] },
