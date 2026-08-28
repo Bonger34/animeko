@@ -58,24 +58,24 @@ android {
             isUniversalApk = true // 额外构建一个
         }
     }
-    signingConfigs {
-        kotlin.runCatching { getProperty("signing_release_storeFileFromRoot") }.getOrNull()?.let {
-            create("release") {
-                storeFile = rootProject.file(it)
-                storePassword = getProperty("signing_release_storePassword")
-                keyAlias = getProperty("signing_release_keyAlias")
-                keyPassword = getProperty("signing_release_keyPassword")
-            }
-        }
-        kotlin.runCatching { getProperty("signing_release_storeFile") }.getOrNull()?.let {
-            create("release") {
-                storeFile = file(it)
-                storePassword = getProperty("signing_release_storePassword")
-                keyAlias = getProperty("signing_release_keyAlias")
-                keyPassword = getProperty("signing_release_keyPassword")
-            }
-        }
-    }
+//    signingConfigs {
+//        kotlin.runCatching { getProperty("signing_release_storeFileFromRoot") }.getOrNull()?.let {
+//            create("release") {
+//                storeFile = rootProject.file(it)
+//                storePassword = getProperty("signing_release_storePassword")
+//                keyAlias = getProperty("signing_release_keyAlias")
+//                keyPassword = getProperty("signing_release_keyPassword")
+//            }
+//        }
+//        kotlin.runCatching { getProperty("signing_release_storeFile") }.getOrNull()?.let {
+//            create("release") {
+//                storeFile = file(it)
+//                storePassword = getProperty("signing_release_storePassword")
+//                keyAlias = getProperty("signing_release_keyAlias")
+//                keyPassword = getProperty("signing_release_keyPassword")
+//            }
+//        }
+//    }
     packaging {
         jniLibs {
             // FFmpeg is launched as a process, so the native binary must be extracted to a filesystem path.
