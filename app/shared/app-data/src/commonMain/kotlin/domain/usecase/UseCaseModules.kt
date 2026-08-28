@@ -21,6 +21,8 @@ import me.him188.ani.app.domain.episode.CreateMediaFetchSelectBundleFlowUseCase
 import me.him188.ani.app.domain.episode.CreateMediaFetchSelectBundleFlowUseCaseImpl
 import me.him188.ani.app.domain.episode.GetAnimeScheduleFlowUseCase
 import me.him188.ani.app.domain.episode.GetAnimeScheduleFlowUseCaseImpl
+import me.him188.ani.app.domain.episode.GetAnimeSeasonIdsFlowUseCase
+import me.him188.ani.app.domain.episode.GetAnimeSeasonIdsFlowUseCaseImpl
 import me.him188.ani.app.domain.episode.GetEpisodeCollectionInfoFlowUseCase
 import me.him188.ani.app.domain.episode.GetEpisodeCollectionInfoFlowUseCaseImpl
 import me.him188.ani.app.domain.episode.GetEpisodeCollectionTypeUseCase
@@ -79,6 +81,7 @@ fun KoinApplication.useCaseModules() = module {
     single<SetEpisodeCollectionTypeUseCase> { SetEpisodeCollectionTypeUseCaseImpl(koin) }
     single<GetEpisodeCollectionTypeUseCase> { GetEpisodeCollectionTypeUseCaseImpl(koin) }
     single<GetAnimeScheduleFlowUseCase> { GetAnimeScheduleFlowUseCaseImpl(get()) }
+    single<GetAnimeSeasonIdsFlowUseCase> { GetAnimeSeasonIdsFlowUseCaseImpl(get()) }
     single<PostCommentUseCase> { PostCommentUseCaseImpl(get()) }
     single<GetPreferredMediaSourceSortingUseCase> { GetPreferredMediaSourceSortingUseCaseImpl(get()) }
     single<GetMediaSelectorSourceTiersUseCase> { GetMediaSelectorSourceTiersUseCaseImpl(get()) }
